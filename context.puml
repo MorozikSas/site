@@ -1,0 +1,18 @@
+@startuml
+!include <C4/C4_container>
+
+System_Boundary(back, "Back"){
+    Container(backend, "website-back", "Пока непонятны никакие нахуй фреймворки","Python 3.11")
+    ContainerDb(BackDB, "database", "База данных могозина")
+}
+
+Container(frontend, "Front","Фронт могозина","Django")
+
+Rel_R(backend, BackDB, "Хер пойми какой протокол")
+Rel_D(frontend,backend, "https")
+
+
+
+
+Lay_U(backend, frontend)
+@enduml
